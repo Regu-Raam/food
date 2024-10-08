@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Food Delivery</title>
+</head>
+<body>
+    <script>
+        // Check if user is logged in (for demonstration purposes)
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+        if (!isLoggedIn) {
+            // Redirect to login page if not logged in
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <header>
+        <h1>Food Delivery Service</h1>
+        <nav>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+    <main>
+        <section id="search">
+            <input type="text" id="restaurant-search" placeholder="Search Restaurants...">
+            <input type="text" id="food-search" placeholder="Search Food...">
+        </section>
+        <section id="restaurants">
+            <h2>Available Restaurants</h2>
+            <div class="restaurant" data-id="1">
+                <img src="Pizza.jpg" alt="Pizza Hut" class="restaurant-img">
+                <h3>PIZZA HUT</h3>
+                <p>Delicious pizza with fresh ingredients.</p>
+                <button class="view-menu">View Menu</button>
+            </div>
+            <div class="restaurant" data-id="2">
+                <img src="Burger.jpg" alt="Burger Joint" class="restaurant-img">
+                <h3>BURGER JOINT</h3>
+                <p>Tasty burgers and crispy fries.</p>
+                <button class="view-menu">View Menu</button>
+            </div>
+            <div class="restaurant" data-id="3">
+                <img src="coffee.jpg" alt="Coffee Day" class="restaurant-img">
+                <h3>COFFEE DAY</h3>
+                <p>Good to the last sip.</p>
+                <button class="view-menu">View Menu</button>
+            </div>
+            <div class="restaurant" data-id="4">
+                <img src="Fried.jpg" alt="YRC crispy" class="restaurant-img">
+                <h3>YRC CRISPY</h3>
+                <p>Flavor Blast, Chicken Cast.</p>
+                <button class="view-menu">View Menu</button>
+            </div>
+        </section>
+        <section id="menu" style="display:none;">
+            <h2>Menu</h2>
+            <ul id="menu-items"></ul>
+            <button id="back">Back to Restaurants</button>
+        </section>
+        <section id="order-summary" style="display:none;">
+            <h2>Order Summary</h2>
+            <ul id="order-list"></ul>
+            <div id="billing-details">
+                <h3>Billing Details</h3>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method">
+                    <option value="upi">UPI</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="credit-card">Credit Card</option>
+                </select>
+                <p>GST and Taxes included.</p>
+            </div>
+            <button id="confirm-order">Confirm Order</button>
+            <button id="reset-order">Reset Order</button>
+        </section>
+        <section id="delivery-statement" style="display:none;">
+            <h2>Delivery Statement</h2>
+            <p>Your order will be delivered shortly.</p>
+        </section>
+        <section id="user-reviews">
+            <h2>User Reviews</h2>
+            <textarea id="review-text" placeholder="Leave a review..."></textarea>
+            <button id="submit-review">Submit Review</button>
+            <ul id="reviews-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Food Delivery Service</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
